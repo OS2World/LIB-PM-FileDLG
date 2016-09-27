@@ -1,0 +1,13 @@
+#define SAVE_FNAME      203
+#define SAVE_CURDIR     202
+#define SAVE_HLPTEXT    201
+#define SAVE_TITLE      200
+#define OPEN_FILELIST   106
+#define OPEN_DIRLIST    105
+#define OPEN_DRIVES     104
+#define OPEN_FNAME      103
+#define OPEN_CURDIR     102
+#define OPEN_HLPTEXT    101
+#define OPEN_TITLE      100
+#define IDD_SAVE        20
+#define IDD_OPEN        10

@@ -1,0 +1,65 @@
+DLGINCLUDE 1 "DIALOG.H"
+
+DLGTEMPLATE IDD_SAVE LOADONCALL MOVEABLE DISCARDABLE 
+BEGIN
+    DIALOG "", IDD_SAVE, 24, 39, 263, 77, FS_NOBYTEALIGN | FS_DLGBORDER | 
+                WS_VISIBLE | WS_CLIPSIBLINGS | WS_SAVEBITS
+    BEGIN
+        CONTROL "~Filename :", -1, 10, 29, 47, 8, WC_STATIC,
+                SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE
+        CONTROL "Text", SAVE_FNAME, 63, 29, 186, 8, WC_ENTRYFIELD, ES_LEFT | 
+                ES_AUTOSCROLL | ES_MARGIN | WS_TABSTOP | WS_VISIBLE
+        CONTROL "Save", 1, 66, 6, 37, 12, WC_BUTTON, BS_PUSHBUTTON | BS_DEFAULT | 
+                WS_TABSTOP | WS_VISIBLE
+        CONTROL "Cancel", 2, 116, 6, 37, 12, WC_BUTTON, BS_PUSHBUTTON | 
+                WS_VISIBLE
+        CONTROL "Help", 8, 166, 6, 38, 12, WC_BUTTON, BS_PUSHBUTTON | BS_HELP | 
+                WS_VISIBLE
+        CONTROL "Save File", SAVE_TITLE, 3, 65, 257, 8, WC_STATIC, SS_TEXT | 
+                DT_CENTER | DT_TOP | WS_VISIBLE
+        CONTROL "Type file name.", SAVE_HLPTEXT, 10, 53, 241, 8, WC_STATIC, 
+                SS_TEXT | DT_LEFT | DT_TOP | WS_VISIBLE
+        CONTROL "Current directory :", -1, 10, 41, 77, 8, WC_STATIC, SS_TEXT | 
+                DT_LEFT | DT_TOP | WS_VISIBLE
+        CONTROL "C:\\...\\CURDIR", SAVE_CURDIR, 91, 41, 159, 8, WC_STATIC, 
+                SS_TEXT | DT_LEFT | DT_TOP | WS_VISIBLE
+    END
+END
+
+DLGTEMPLATE IDD_OPEN LOADONCALL MOVEABLE DISCARDABLE 
+BEGIN
+    DIALOG "", IDD_OPEN, 9, 16, 335, 153, FS_NOBYTEALIGN | FS_DLGBORDER | 
+                WS_VISIBLE | WS_CLIPSIBLINGS | WS_SAVEBITS
+    BEGIN
+        CONTROL "File~name :", -1, 5, 103, 47, 8, WC_STATIC,
+                SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE
+        CONTROL "Text", OPEN_FNAME, 57, 103, 270, 8, WC_ENTRYFIELD, ES_LEFT | 
+                ES_AUTOSCROLL | ES_MARGIN | WS_TABSTOP | WS_VISIBLE
+        CONTROL "D~rive", -1, 5, 83, 29, 8, WC_STATIC, SS_TEXT | DT_CENTER |
+                DT_TOP | DT_MNEMONIC | WS_VISIBLE
+        CONTROL "", OPEN_DRIVES, 5, 33, 28, 50, WC_LISTBOX, WS_TABSTOP | 
+                WS_VISIBLE
+        CONTROL "~Directory", -1, 46, 83, 135, 8, WC_STATIC, SS_TEXT |
+                DT_CENTER | DT_TOP | DT_MNEMONIC | WS_VISIBLE
+        CONTROL "", OPEN_DIRLIST, 46, 33, 136, 50, WC_LISTBOX, WS_TABSTOP | 
+                WS_VISIBLE
+        CONTROL "~Files", -1, 195, 83, 134, 8, WC_STATIC, SS_TEXT | DT_CENTER |
+                DT_TOP | DT_MNEMONIC | WS_VISIBLE
+        CONTROL "", OPEN_FILELIST, 195, 9, 135, 75, WC_LISTBOX, WS_TABSTOP |
+                WS_VISIBLE
+        CONTROL "Open", 1, 25, 7, 38, 12, WC_BUTTON, BS_PUSHBUTTON | BS_DEFAULT | 
+                WS_TABSTOP | WS_VISIBLE
+        CONTROL "Cancel", 2, 75, 7, 38, 12, WC_BUTTON, BS_PUSHBUTTON | 
+                WS_VISIBLE
+        CONTROL "Help", 8, 125, 7, 38, 12, WC_BUTTON, BS_PUSHBUTTON | BS_HELP | 
+                WS_VISIBLE
+        CONTROL "Open File", OPEN_TITLE, 2, 142, 331, 8, WC_STATIC, SS_TEXT | 
+                DT_CENTER | DT_TOP | WS_VISIBLE
+        CONTROL "Select file or type filename.", OPEN_HLPTEXT, 5, 128, 325, 8, 
+                WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | WS_VISIBLE
+        CONTROL "Current directory :", -1, 5, 114, 78, 8, WC_STATIC, SS_TEXT | 
+                DT_LEFT | DT_TOP | WS_VISIBLE
+        CONTROL "C:\\...\\CURDIR", OPEN_CURDIR, 87, 114, 242, 8, WC_STATIC, 
+                SS_TEXT | DT_LEFT | DT_TOP | WS_VISIBLE
+    END
+END

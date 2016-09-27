@@ -1,0 +1,50 @@
+# MAKE file for: FILEDLG.DLL
+#
+# (c)Copyright 1989 Rick Yoder
+
+# Macro definitions
+#
+CC_DEBUG        = cl -W3 -c -Alfw -G2s -Od -Zi -NT _TEXT
+CC_NODEBUG      = cl -W3 -c -Alfw -Os -G2s -NT _TEXT
+LINK_DEBUG      = link /nod /noi /co /align:16 /map
+LINK_NODEBUG    = link /nod /noi /align:16 /map
+CC              = $(CC_NODEBUG)
+LINK            = $(LINK_NODEBUG)
+
+LIB_LIST        = llibcdll os2
+OBJ_LIST        = opendlg.obj savedlg.obj parse.obj errmsg.obj fitpath.obj
+
+# Resources
+#
+filedlg.res:    filedlg.rc dialog.h dialog.dlg
+    rc -r filedlg.rc
+
+#Import Libraries
+filedlg.lib:    filedlg.def
+    implib filedlg.lib filedlg.def
+
+# C files
+#
+opendlg.obj:    opendlg.c filedlg.h tools.h filedlg
+    $(CC) opendlg.c
+
+savedlg.obj:    savedlg.c filedlg.h tools.h filedlg
+    $(CC) savedlg.c
+
+parse.obj:      parse.c tools.h filedlg
+    $(CC) parse.c
+
+errmsg.obj:     errmsg.c tools.h filedlg
+    $(CC) -Gt1 errmsg.c
+
+fitpath.obj:    fitpath.c tools.h filedlg
+    $(CC) fitpath.c
+
+# Main files: FILEDLG.DLL
+#
+filedlg.dll:    $(OBJ_LIST) filedlg.def
+    $(LINK) $(OBJ_LIST),filedlg.dll,,$(LIB_LIST),filedlg.def;
+    rc filedlg.res filedlg.dll
+
+filedlg.dll:    filedlg.res
+    rc filedlg.res filedlg.dll
